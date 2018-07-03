@@ -9,15 +9,26 @@
   </head>
 
   <body>
-    <% if !user_signed_in? %>
-      <%= link_to 'Sign_in', new_user_session_path %>
-      <%= link_to 'Sign_up', new_user_registration_path %>
-    <% end %>
-    <% if user_signed_in? %>
-      <%= link_to 'Sign_out', destroy_user_session_path, method: :delete %>
-    <% end %>
+    <nav class='navbar'>
+      <% if !user_signed_in? %>
+        <li><%= link_to 'Sign in as User', new_user_session_path %></li>
+        <li><%= link_to 'Sign up as User', new_user_registration_path %></li>
+      <% end %>
+      <% if user_signed_in? %>
+        <li><%= link_to 'Sign out as User', destroy_user_session_path, method: :delete %></li>
+      <% end %>
+      <li><%= link_to 'Posts', posts_path %></li>
 
 
+       <% if admin_signed_in? %>
+        <li class='admin'><%= link_to "Sign out as Admin", destroy_admin_session_path, method: :delete   %></li>
+        <% else %>
+        <li class='admin'><%= link_to "Sign in as admin", new_admin_session_path %> </li>
+       <% end %> 
+    </nav>
+    <% if current_admin %>
+    <li style='border: 2px solid;background-color: lightgreen; display: inline-block;float: right;margin-top: 20px'><%= current_admin.email  %></li>
+    <% end %>
 
 
     <%= yield %>

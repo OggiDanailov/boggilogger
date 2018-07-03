@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
  
+  get 'comments/new'
+
+  resources :posts
+
 root "home#index"
 
   devise_for :admins

@@ -1,0 +1,21 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.post-form {
+	border: 2px solid;
+	width: 400px;
+	padding: 10px;
+	margin-left: 20px;
+	background-color: lightgreen;
+}
+
+.post-form li {
+	list-style-type: none;
+	padding: 3px;
+}
+
+.post-form li a {
+	text-decoration: none;
+}
