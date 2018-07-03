@@ -23,6 +23,7 @@ before_action :authenticate_admin!, only: [:new, :create, :edit, :update]
 
   def show
     post_find
+    @comment = Comment.new
   end
 
   def edit
