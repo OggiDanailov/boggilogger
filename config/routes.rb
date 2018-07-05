@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 	get "/users/profile/:id" => "users#show"
 root "home#index"
   resources :posts
-  resources :comments, only: [:new, :create]
+  resources :comments, only: [:new, :create, :destroy]
 
   devise_for :admins
   devise_for :users, :controllers => { registrations: 'users/registrations' }
