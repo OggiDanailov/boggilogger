@@ -8,7 +8,7 @@
 	<div id='comment_field'>
 			<li><%= c.content %></li>
 			<li><a href="/users/profile/<%=c.user.id %>"><%= c.user.email %></a>	</li>
-			<%= button_to 'destroy', comment_path(c.id), method: :delete %>
+			<%= button_to 'destroy', comment_path(:comment_id => c.id), method: :delete %>
 	</div>
 		<% end %>
 </div>
