@@ -6,7 +6,8 @@ class CommentsController < ApplicationController
   def create
   	comment = Comment.new(comment_params)
   	comment.user_id = current_user.id 
-  	comment.post_id = Post.find(params[:id])
+  	comment.post_id = params[:post_id]
+   
   	respond_to do |format|
   		if comment.save
   			format.html {redirect_to "/posts"}
