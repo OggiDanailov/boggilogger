@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
  
-  get 'comments/new'
+  
+  get 'users/show'
 
-  resources :posts
-
+	get "/users/profile/:id" => "users#show"
 root "home#index"
+  resources :posts
+  resources :comments, only: [:new, :create, :destroy]
 
   devise_for :admins
   devise_for :users, :controllers => { registrations: 'users/registrations' }
