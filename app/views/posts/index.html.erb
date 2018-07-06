@@ -1,7 +1,6 @@
- <div  class='post-form'>
- 	<h3>List of all Articles:</h3>
  	<% @posts.each do |p| %>
- 	<div style='border: 2px solid;margin: 2px'>
+ <div  class='post-form'>
+ 	<div class='post-form-inner'>
  		<h4>Title: </h4>
  		<li><a href='/posts/<%= p.id %>'><%= p.title %></a></li>
  		<br>
@@ -10,5 +9,5 @@
  		<br>
  		<li>Tag: <%= p.category %></li>
  	</div>
- 	<% end %>
  </div>
+ 	<% end %>
