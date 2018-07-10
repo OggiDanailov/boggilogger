@@ -1,8 +1,10 @@
+
+
 <%= form_for @post do |f| %>
 <div class='post-form'>
 Title: <li><%= f.text_field :title, autofocus: true %></li>
 <br>
-Content:<li> <%= f.text_area :content, cols: 60, rows: 10 %></li>
+Content:<li> <%= f.trix_editor :content, cols: 60, rows: 10 %></li>
 <br>
 <li><%= f.select :category, collection_select: @types %></li>
 <br>
