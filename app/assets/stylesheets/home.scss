@@ -11,9 +11,12 @@ html, body {
 .navbar {
 	width: 100%;
 	// border: 2px solid;
-	background-color: lightblue;
+	background-color: black;
 	margin: 0 auto;
 	padding: 20px;
+	color: white;
+	height: 100px;
+	line-height: 100px;
 }
 
 .navbar li {
@@ -21,7 +24,10 @@ html, body {
 	display: inline-block;
 	padding-left: 20px;
 }
-
+.navbar li a {
+	text-decoration: none;
+	
+}
 .admin {
 	border: 2px solid;
 	padding:10px 10px;
