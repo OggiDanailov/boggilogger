@@ -10,11 +10,11 @@ class CommentsController < ApplicationController
    
   	respond_to do |format|
   		if comment.save
-  			format.html {redirect_to "/posts"}
-  			format.js	
+  			format.html {redirect_to "/posts/#{params[:post_id]}"}
+  			# format.js	
   		else
   			format.html {render :new}
-    		format.js
+    		# format.js
   		end
   	end
   end
